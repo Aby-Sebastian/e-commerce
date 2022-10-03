@@ -27,7 +27,7 @@ def registerUser(request):
 	else:
 		form = CreateUserForm()
 	context={'form':form}
-	return render(request,'main/register.html',context=context)
+	return render(request,'accounts/register.html',context=context)
 
 
 
@@ -44,10 +44,10 @@ def loginPage(request):
 			messages.info(request, message='Username or Password is incorrect')
 			return redirect('login')
 	context = {}
-	return render(request, 'main/login.html',context=context)
+	return render(request, 'accounts/login.html',context=context)
 
 
 def logoutUser(request):
 	logout(request)
-	return redirect('index')
+	return redirect('app:index')
 
